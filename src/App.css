@@ -1,33 +1,107 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  background-color: green;
+  width: 100vw;
+  height:100vh
+}
+
+.Header {
+	display: flex;
+	flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100vw;
+  padding-top: 30px;
+  padding-right: 500px;
+  background-color: rgb(38, 185, 99);
+  opacity: 1;
 }
 
-.App-link {
-  color: #61dafb;
+.wizard-container{
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(214, 238, 214);
+  width: 60vw;
+  height: 100vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.wizard-top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.wizard-edit{
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: baseline;
+  align-content: stretch;
+  padding-left: 150px;
+}
+.wizard-lower-three{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.wizard-lower-button{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.dash-container{
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(214, 238, 214);
+  width: 60vw;
+  height: 100vh;
+}
+
+.dash-word{
+  padding-left: 30px;
+  font-size: 20pt;
+}
+.dash-home{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-left: 30px;
+}
+
+.dash-info-container{
+  width: 55vw;
+  display: flex;
+  margin:auto;
+  flex-direction: column;
+  margin-top: 10px;
+  align-items: flex-start;
+
+}
+.dash-info{
+  background-color: rgb(221, 203, 238);
+  width: 54vw;
+  display: flex;
+  padding-left: 10px;
+  flex-direction: column;
+  align-items: baseline;
+  border-style: dotted;
+
+}
+.hr{
+  width:95%;
+  height: 3px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color:#666;
+  border: 0 none;
+}
+
+.dash-top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
