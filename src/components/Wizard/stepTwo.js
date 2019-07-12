@@ -39,7 +39,7 @@ class StepTwo extends Component {
 
                 </div>
                 <button><Link to='/'>Cancel</Link></button>
-                <button className="add-button" onClick={this.saveInven}>Complete</button>
+                <button className="add-button" onClick={this.saveInven}>does not work next step does</button>
                 <button><Link to='/stepThree'>Next step</Link></button>
                 <button><Link to='/Wizard'>Previous step </Link></button>
             </div>
