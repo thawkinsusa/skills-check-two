@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from "react-router-dom";
-import { Route } from 'react-router-dom'
-import stepTwo from './stepTwo'
 class Wizard extends Component {
   constructor() {
     super()
@@ -21,7 +19,7 @@ class Wizard extends Component {
     axios
       .get("/api/houses")
       .then(res => {
-        console.log('this is the data', res.data)
+        console.log('this is the data houses', res.data)
         this.setState({ houses: res.data });
       })
       .catch(err => {
@@ -35,16 +33,6 @@ class Wizard extends Component {
     this.setState({ [name]: value })
   };
 
-  clear = () => {
-    this.setState({
-      property: '',
-      address: '',
-      city: '',
-      state: '',
-      zipcode: ''
-
-    })
-  }
 
   saveInven = () => {
     const { property,

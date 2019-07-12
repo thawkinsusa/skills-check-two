@@ -8,6 +8,7 @@ class Dashboard extends Component {
         this.state = {
             houses: [],
             id: 0
+
         }
     };
 
@@ -22,35 +23,35 @@ class Dashboard extends Component {
     }
     deleteHouse = id => {
         axios
-          .delete(`/api/houses/${id}`)
-          .then(res => {
-            this.setState=({houses: res.data})
-              ;
-    
-          })
-      };
- 
+            .delete(`/api/houses/${id}`)
+            .then(res => {
+                this.setState = ({ houses: res.data })
+                    ;
+
+            })
+    };
+
 
     render() {
         console.log(this.state.houses)
         return (
             <div className="dash-container">
-                
+
                 <div className='dash-top' >
-                    <p className='dash-word'>Dashboard</p> 
-                    <button>    
-        <Link to='/Wizard' >Add New Property</Link></button>
-                
+                    <p className='dash-word'>Dashboard</p>
+                    <button>
+                        <Link to='/Wizard' >Add New Property</Link></button>
+
                 </div>
                 <div>{this.state.houses.map(house => {
                     return (<div>
-                        <House house={house} deleteHouse={this.deleteHouse} componentDidMount={this.componentDidMount} ></House>
+                        <House house={house} key={'specialkey'} deleteHouse={this.deleteHouse} componentDidMount={this.componentDidMount} ></House>
                     </div>)
                 })}
                 </div>
-                
-                </div>
-           
+
+            </div>
+
 
         )
     }
