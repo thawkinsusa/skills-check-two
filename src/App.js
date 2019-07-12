@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import Wizard from './components/Wizard/Wizard'
 import { HashRouter, Link } from "react-router-dom";
-import axios from 'axios'
 import router from './router'
 class App extends Component{
   constructor() {
@@ -19,7 +17,7 @@ class App extends Component{
       <HashRouter>
         <div className="wizard-container">
           <button>
-          <Link to='/Wizard'>add house</Link>
+          <Link to='/dashboard'></Link>
           </button>
           {router}
         </div>
