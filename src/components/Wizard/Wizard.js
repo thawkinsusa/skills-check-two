@@ -1,16 +1,17 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from "react-router-dom";
-
+import { Route } from 'react-router-dom'
+import stepTwo from './stepTwo'
 class Wizard extends Component {
-constructor() {
+  constructor() {
     super()
     this.state = {
       property: '',
       address: '',
       city: '',
       state: '',
-      zipcode:'',
+      zipcode: '',
       houses: []
     };
 
@@ -20,7 +21,7 @@ constructor() {
     axios
       .get("/api/houses")
       .then(res => {
-        console.log('this is the data' ,res.data)
+        console.log('this is the data', res.data)
         this.setState({ houses: res.data });
       })
       .catch(err => {
@@ -28,62 +29,63 @@ constructor() {
       });
   }
 
-    handleChange = (e) => {
-      let { name, value } = e.target
-      console.log('handlechange', this.handleChange)
-      this.setState({ [name]: value })
+  handleChange = (e) => {
+    let { name, value } = e.target
+    console.log('handlechange', this.handleChange)
+    this.setState({ [name]: value })
   };
 
   clear = () => {
-      this.setState({
-        property: '',
-        address: '',
-        city: '',
-        state: '',
-        zipcode:''
-        
-      })
+    this.setState({
+      property: '',
+      address: '',
+      city: '',
+      state: '',
+      zipcode: ''
+
+    })
   }
 
   saveInven = () => {
-      const { property,
-        address, 
-        city,
-        state,
-        zipcode
-       } = this.state
-      axios.post("/api/houses", { property, 
-        address, 
-        city,
-        state,
-        zipcode })
-        
-      
-      // this.clear()
+    const { property,
+      address,
+      city,
+      state,
+      zipcode
+    } = this.state
+    axios.post("/api/houses", {
+      property,
+      address,
+      city,
+      state,
+      zipcode
+    })
   }
 
   render() {
-    const {property, 
-      address, 
+    const { property,
+      address,
       city,
       state,
-      zipcode} = this.state
+      zipcode } = this.state
+
     return (
-        <div className="wizard-container">
-            <div className='wizard-edit'>
-                <p>Property Name:<input value={property} onChange={(e)=>this.handleChange(e)} name='property'/></p>
-                <p>Address:<input value={address} onChange={(e)=>this.handleChange(e)}  name='address'/></p>
-            </div>
-            <div className='wizard-lower-three'>
-                <p>City:<input value={city} onChange={(e)=>this.handleChange(e)} name='city' /></p>
-                <p>State:<input value={state} onChange={(e)=>this.handleChange(e)} name='state'/></p>
-                <p>Zipcode:<input value={zipcode} onChange={(e)=>this.handleChange(e)} name='zipcode' /></p>
-            </div>
-            <button><Link to='/'>Cancel</Link></button>
-            <button className="add-button" onClick={this.saveInven}>Add House</button>
+      <div className="wizard-container">
+        <div className='wizard-edit'>
+          <p>Property Name:<input value={property} onChange={(e) => this.handleChange(e)} name='property' /></p>
+          <p>Address:<input value={address} onChange={(e) => this.handleChange(e)} name='address' /></p>
         </div>
+        <div className='wizard-lower-three'>
+          <p>City:<input value={city} onChange={(e) => this.handleChange(e)} name='city' /></p>
+          <p>State:<input value={state} onChange={(e) => this.handleChange(e)} name='state' /></p>
+          <p>Zipcode:<input value={zipcode} onChange={(e) => this.handleChange(e)} name='zipcode' /></p>
+        </div>
+        <button><Link to='/'>Cancel</Link></button>
+        <button className="add-button" onClick={this.saveInven}>Complete</button>
+        <button><Link to="/stepTwo">next</Link></button>
+      </div>
     )
-}
+  }
 
 }
 export default Wizard
