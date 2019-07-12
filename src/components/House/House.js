@@ -32,11 +32,11 @@ class House extends Component {
 
                     <div className='dash-info'>
                         <img width='50%' src='https://i.kinja-img.com/gawker-media/image/upload/s--bIV3xkEm--/c_scale,f_auto,fl_progressive,q_80,w_800/jsprifdd1gmfy7e7nola.jpg' />
-                        <p>{this.props.house.property}</p>
-                        <p>{this.props.house.address}</p>
-                        <p>{this.props.house.city}</p>
-                        <p>{this.props.house.state}</p>
-                        <p>{this.props.house.zipcode}</p>
+                        <p>Property Name: {this.props.house.property}</p>
+                        <p>Address: {this.props.house.address}</p>
+                        <p>City: {this.props.house.city}</p>
+                        <p>State: {this.props.house.state}</p>
+                        <p>Zipcode: {this.props.house.zipcode}</p>
                         <button className='center-buttons' onClick={() => { this.props.deleteHouse(this.props.house.houses_id) }}> {`Delete after press please refresh`} </button>
                     </div>
                 </div>

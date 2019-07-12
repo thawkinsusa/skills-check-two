@@ -69,7 +69,7 @@ class Wizard extends Component {
           <p>Zipcode:<input value={zipcode} onChange={(e) => this.handleChange(e)} name='zipcode' /></p>
         </div>
         <button><Link to='/'>Cancel</Link></button>
-        <button className="add-button" onClick={this.saveInven}>Complete</button>
+        <button className="add-button" onClick={this.saveInven}>Click Complete to save! I didn't add image functionality</button>
         <button><Link to="/stepTwo">next</Link></button>
       </div>
     )
