@@ -33,7 +33,7 @@ class StepTwo extends Component {
         return (
             <div className="wizard-container">
                 <div className='wizard-edit'>
-                    <p>Image url:<input value={this.state.image_url} onChange={(e) => this.handleChange(e)} name='image_url' /></p>
+                    <p>Image url:<input placeholder='does not work next step does' value={this.state.image_url} onChange={(e) => this.handleChange(e)} name='image_url' /></p>
                 </div>
                 <div className='wizard-lower-three'>
 

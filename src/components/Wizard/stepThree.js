@@ -49,7 +49,7 @@ class StepThree extends Component {
 
                 </div>
                 <button><Link to='/'>Cancel</Link></button>
-                <button onClick={this.saveInven}>Save</button>
+                <button onClick={this.saveInven}>Save your monthly mortage for a recommend monthly rent</button>
                 <button><Link to='/stepTwo'>Previous step </Link></button>
             </div>
         )

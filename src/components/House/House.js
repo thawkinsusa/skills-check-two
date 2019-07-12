@@ -37,7 +37,7 @@ class House extends Component {
                         <p>{this.props.house.city}</p>
                         <p>{this.props.house.state}</p>
                         <p>{this.props.house.zipcode}</p>
-                        <button className='center-buttons' onClick={() => { this.props.deleteHouse(this.props.house.houses_id) }}> {`Delete`} </button>
+                        <button className='center-buttons' onClick={() => { this.props.deleteHouse(this.props.house.houses_id) }}> {`Delete after press please refresh`} </button>
                     </div>
                 </div>
 
